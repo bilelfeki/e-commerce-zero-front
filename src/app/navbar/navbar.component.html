@@ -1,0 +1,21 @@
+<div class="new-nav-container new-nav-container-style">
+    <div  class="new-left-item-container new-item-container new-item-container-style" >
+      <a
+      class="mt-10"
+      [class.hide]="!menuOpen"
+      *ngFor="let navItem of navItems">
+        <i class="{{ navItem.icon }}"></i>
+        {{ navItem.name }}
+      </a>
+    </div>
+    <div class="new-right-item-container new-item-container new-item-container-style">
+      <button class="right-items mt-10" type="button">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="hideable-span">ITEMS</span>
+      </button>
+      <button class="menu-toggle-button mt-10" (click)="toggleMenu()">
+        <i *ngIf="!menuOpen" class="fa-solid fa-bars"></i>
+        <i *ngIf="menuOpen" class="fa-solid fa-times"></i>
+      </button>
+    </div>
+</div>
