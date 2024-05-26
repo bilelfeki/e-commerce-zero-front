@@ -1,0 +1,14 @@
+<swiper
+  style="height: 400px; width: 400px"
+  [config]="config"
+  (swiper)="onSwiper()"
+  (slideChange)="onSlideChange()"
+>
+  <ng-template class="hello-swiper" swiperSlide>
+    <ng-template class="hello-swiper">Slide 2</ng-template>
+    <ng-template class="hello-swiper" swiperSlide>Slide 3</ng-template>
+    <ng-template class="hello-swiper" swiperSlide>Slide 4</ng-template>
+    <ng-template class="hello-swiper" swiperSlide>Slide 5</ng-template>
+    <ng-template class="hello-swiper" swiperSlide>Slide 6</ng-template>
+  </ng-template>
+</swiper>
