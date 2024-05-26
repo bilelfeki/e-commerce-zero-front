@@ -16,7 +16,9 @@
 
 .nav-container-style {
   background-color: rgb(34, 34, 34);
-  height: 80px;
+  height: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
   font-weight: 400;
   font-size: 12px;
   font-family: "robotobold", "Helvetica", "Arial", sans-serif;
@@ -87,7 +89,7 @@
 
 
   .nav-container-style {
-    background-color: rgb(34, 34, 34);
+    padding:0;
     height: 100%;
   }
 

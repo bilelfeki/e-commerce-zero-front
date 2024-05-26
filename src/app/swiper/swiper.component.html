@@ -1,14 +1,27 @@
 <swiper
-  style="height: 400px; width: 400px"
+  class="swiper-container"
   [config]="config"
   (swiper)="onSwiper()"
   (slideChange)="onSlideChange()"
 >
   <ng-template class="hello-swiper" swiperSlide>
-    <ng-template class="hello-swiper">Slide 2</ng-template>
-    <ng-template class="hello-swiper" swiperSlide>Slide 3</ng-template>
-    <ng-template class="hello-swiper" swiperSlide>Slide 4</ng-template>
-    <ng-template class="hello-swiper" swiperSlide>Slide 5</ng-template>
-    <ng-template class="hello-swiper" swiperSlide>Slide 6</ng-template>
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+    </div>
+  </ng-template>
+  <ng-template class="hello-swiper" swiperSlide>
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+    </div>
+  </ng-template>
+  <ng-template class="hello-swiper" swiperSlide>
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+    </div>
+  </ng-template>
+  <ng-template class="hello-swiper" swiperSlide>
+    <div class="swiper-slide">
+      <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+    </div>
   </ng-template>
 </swiper>

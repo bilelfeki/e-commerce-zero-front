@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import Swiper from 'swiper';
-import SwiperCore,  { Navigation, Pagination, Scrollbar, A11y ,SwiperOptions} from 'swiper';
+import Swiper, { Autoplay } from 'swiper';
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  SwiperOptions,
+} from 'swiper';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
 const swiper = new Swiper('.swiper', {
   // Install modules
-  modules: [Navigation, Pagination, Scrollbar],
+  modules: [Navigation, Pagination, Scrollbar, Autoplay],
   speed: 500,
   navigation: {
     nextEl: '.swiper-button-next',
@@ -17,20 +23,21 @@ const swiper = new Swiper('.swiper', {
 @Component({
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
-  styleUrl: './swiper.component.css'
+  styleUrl: './swiper.component.css',
 })
 export class SwiperComponent {
   config: SwiperOptions = {
-    slidesPerView: 3,
-    spaceBetween: 50,
+    watchSlidesProgress: true,
+    direction: 'horizontal',
     navigation: true,
-    pagination: { clickable: true },
-    scrollbar: { draggable: true },
+    pagination: {
+      clickable: true,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
   };
-  onSwiper() {
-  }
-  onSlideChange() {
-    console.log('slide change');
-  }
-
+  onSwiper() {}
+  onSlideChange() {}
 }
