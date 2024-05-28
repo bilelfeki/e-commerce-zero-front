@@ -4,14 +4,9 @@
   (swiper)="onSwiper()"
   (slideChange)="onSlideChange()"
 >
-  <ng-template class="hello-swiper" swiperSlide>
+  <ng-template *ngFor="let imageSource of swiperImageSources" class="hello-swiper" swiperSlide>
     <div class="swiper-slide">
-      <img src="https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS-Site/-/inSPIRED-inTRONICS-rest/en_US/pwa/pwa_home_teaser_2.avif" />
-    </div>
-  </ng-template>
-  <ng-template class="hello-swiper" swiperSlide>
-    <div class="swiper-slide">
-      <img src="https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS-Site/-/inSPIRED-inTRONICS-rest/en_US/pwa/pwa_home_teaser_1.avif" />
+      <img [src]="imageSource" />
     </div>
   </ng-template>
 </swiper>

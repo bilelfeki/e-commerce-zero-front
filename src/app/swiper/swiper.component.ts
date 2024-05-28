@@ -38,6 +38,8 @@ export class SwiperComponent {
       disableOnInteraction: false,
     },
   };
+  swiperImageSources=['https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS-Site/-/inSPIRED-inTRONICS-rest/en_US/pwa/pwa_home_teaser_2.avif',  'https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS-Site/-/inSPIRED-inTRONICS-rest/en_US/pwa/pwa_home_teaser_1.avif'
+]
   onSwiper() {}
   onSlideChange() {}
 }
