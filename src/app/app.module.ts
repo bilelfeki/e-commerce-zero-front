@@ -8,6 +8,7 @@ import { SwiperModule } from 'swiper/angular';
 import { SwiperComponent } from './swiper/swiper.component';
 import { ProductComponent } from './product/product.component';
 import { FooterComponent } from './footer/footer.component';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     SwiperComponent,
     ProductComponent,
-    FooterComponent
+    FooterComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,

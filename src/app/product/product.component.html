@@ -18,7 +18,7 @@
         <div class="product-rate-stars">
           <ng-container *ngFor="let elem of rateIterator">
             <svg
-              *ngIf="elem <= productDetail.rate"
+              *ngIf="elem < productDetail.rate"
               class="w-4 h-4 text-yellow-300"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
             </svg>
 
             <svg
-              *ngIf="elem > productDetail.rate"
+              *ngIf="elem >= productDetail.rate"
               class="w-4 h-4 text-gray-200 dark:text-gray-600"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
