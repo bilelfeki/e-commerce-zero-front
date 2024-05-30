@@ -27,6 +27,7 @@ describe('NavbarComponent', () => {
     expect(component.menuOpen)
       .withContext('menu is hided on mobile screen at first')
       .toBe(false);
+
     component.toggleMenu();
 
     expect(component.menuOpen)
@@ -35,7 +36,9 @@ describe('NavbarComponent', () => {
   });
   it('test the height', () => {
     fixture = TestBed.createComponent(NavbarComponent);
+
     component = fixture.componentInstance;
+
     Object.defineProperty(window, 'innerHeight', {
       writable: true,
       configurable: true,
@@ -43,8 +46,11 @@ describe('NavbarComponent', () => {
     });
 
     window.dispatchEvent(new Event('resize'));
+
     expect(window.innerHeight).toBe(150);
+
     const bannerDe: DebugElement = fixture.debugElement;
+
     const paragraphDe = bannerDe.query(By.css('div'));
     const a: HTMLElement = paragraphDe.nativeElement;
     expect(a.innerHTML.indexOf('hide-on-mobile')).toBeGreaterThan(10000)

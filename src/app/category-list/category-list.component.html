@@ -1,23 +1,39 @@
 <nav
   class="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
 >
-  <div class="flex gap-4 justify-start flex-wrap px-20">
-    <ng-container  *ngFor="let category of categories">
+  <div class="flex gap-3 justify-center flex-wrap px-20">
+    <ng-container *ngFor="let category of categories">
       <div (mouseleave)="closeCategory(category)">
-        <p>
-          <strong
-            (mouseenter)="openCategory(category)"
-            class="hover:text-gray-500 cursor-pointer"
-            >{{ category.name }}</strong
-          >
+        <p
+          (mouseenter)="openCategory(category)"
+          class="z-10 bg-white divide-y divide-gray-100 shadow w-44 dark:bg-gray-700 py-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer"
+        >
+          <strong class="hover:text-gray-500">
+            <span *ngIf="!category.collapsed">&#9654;</span> <!-- Right arrow -->
+            <span *ngIf="category.collapsed">&#9660;</span>
+             {{ category.name }}
+          </strong>
         </p>
-        <ng-container *ngFor="let child of category.children">
-          <div >
-              <span *ngIf="category.collapsed" (mouseenter)="openCategory(category)"> {{ child }}</span>
-          </div>
-        </ng-container>
-      </div>
 
+        <ul >
+          <ng-container
+          [@openClose]="category.collapsed ? 'open' : 'closed'"
+           *ngFor="let child of category.children">
+            <li
+              *ngIf="category.collapsed"
+              class="z-10 bg-white divide-y divide-gray-100 shadow w-44 dark:bg-gray-700 py-2 text-sm text-gray-700 dark:text-gray-200"
+            >
+              <a
+                (mouseenter)="openCategory(category)"
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                {{ child }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
     </ng-container>
   </div>
 </nav>
