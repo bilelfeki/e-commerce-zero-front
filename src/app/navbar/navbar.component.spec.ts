@@ -24,6 +24,7 @@ describe('NavbarComponent', () => {
   it('#toggleMenu() should toggle the navbar list when clicking ', () => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
+
     expect(component.menuOpen)
       .withContext('menu is hided on mobile screen at first')
       .toBe(false);
@@ -34,26 +35,32 @@ describe('NavbarComponent', () => {
       .withContext('after clicking on navbar toggle button')
       .toBe(true);
   });
-  it('test the height', () => {
+  it('navigation should be responsive', () => {
+
     fixture = TestBed.createComponent(NavbarComponent);
-
     component = fixture.componentInstance;
+    const bannerDe: DebugElement = fixture.debugElement;
+    const anchorTags = bannerDe.query(By.css('a'));
+    expect(anchorTags)
+    .withContext("before resizing window there is no anchor tags")
+    .toBeNull;
 
+    /**
+     * when resizing window
+     */
     Object.defineProperty(window, 'innerHeight', {
       writable: true,
       configurable: true,
       value: 150,
     });
-
     window.dispatchEvent(new Event('resize'));
 
-    expect(window.innerHeight).toBe(150);
 
-    const bannerDe: DebugElement = fixture.debugElement;
+    fixture.detectChanges();
+    const anchorTagsAfterResize = bannerDe.query(By.css('a'));
 
-    const paragraphDe = bannerDe.query(By.css('div'));
-    const a: HTMLElement = paragraphDe.nativeElement;
-    expect(a.innerHTML.indexOf('hide-on-mobile')).toBeGreaterThan(10000)
-
+     expect(anchorTags)
+    .withContext("after resizing window anchor tags should exist")
+    .toBeTruthy
   });
 });

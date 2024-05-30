@@ -4,11 +4,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SwiperComponent } from 'swiper/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserPlatformLocation } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
+        BrowserAnimationsModule,
         RouterTestingModule
       ],
       declarations: [

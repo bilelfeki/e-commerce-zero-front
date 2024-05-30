@@ -16,7 +16,7 @@
         </p>
 
         <ul >
-          <ng-container
+          <div
           [@openClose]="category.collapsed ? 'open' : 'closed'"
            *ngFor="let child of category.children">
             <li
@@ -31,7 +31,7 @@
                 {{ child }}
               </a>
             </li>
-          </ng-container>
+          </div>
         </ul>
       </div>
     </ng-container>
