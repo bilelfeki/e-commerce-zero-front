@@ -1,0 +1,30 @@
+<nav class="nav-container">
+  <div class="flex gap-3 justify-center flex-wrap px-20">
+      <div *ngFor="let category of categories">
+        <div (click)="toggleCategory(category)" class="nav-header">
+          <strong class="hover:text-gray-500">
+            <!-- Right arrow -->
+            <span *ngIf="!category.collapsed">&#9654;</span>
+            <span *ngIf="category.collapsed">&#9660;</span>
+            {{ category.name }}
+          </strong>
+        </div>
+
+        <ul>
+          <div *ngFor="let child of category.children">
+            <li
+              *ngIf="category.collapsed"
+              class="category-item"
+            >
+              <a
+                href="#"
+                class="category-link"
+              >
+                {{ child }}
+              </a>
+            </li>
+          </div>
+        </ul>
+      </div>
+  </div>
+</nav>

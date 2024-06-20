@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import Swiper, { Autoplay } from 'swiper';
 import SwiperCore, {
   Navigation,
@@ -25,7 +26,12 @@ const swiper = new Swiper('.swiper', {
   templateUrl: './swiper.component.html',
   styleUrl: './swiper.component.css',
 })
-export class SwiperComponent {
+export class SwiperComponent implements OnInit {
+  constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+    this.http.get('parser?url=https://github.com/bilelfeki/multi-website-pictures/tree/master/multi-website-picture/Electronic/Accueil')
+    .subscribe((data) => console.log(data));
+  }
   config: SwiperOptions = {
     watchSlidesProgress: true,
     direction: 'horizontal',
@@ -38,8 +44,11 @@ export class SwiperComponent {
       disableOnInteraction: false,
     },
   };
-  swiperImageSources=['https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS-Site/-/inSPIRED-inTRONICS-rest/en_US/pwa/pwa_home_teaser_2.avif',  'https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS-Site/-/inSPIRED-inTRONICS-rest/en_US/pwa/pwa_home_teaser_1.avif'
-]
+  swiperImageSources = [
+    'https://github.com/bilelfeki/multi-website-pictures/blob/master/multi-website-picture/eye%20glasses/Couverture/b-2.jpg?raw=true',
+    'https://github.com/bilelfeki/portfolio/blob/master/src/assets/pexels-photo-1714205.jpeg?raw=true',
+    'https://lh3.googleusercontent.com/u/1/drive-viewer/AKGpihY6Mot-d1a501BxZTtX8KCw0-Moa7A24GfzJyBVP67l_JQXVi5IlQ86RCg-H4TyneCTW4Vs3gi3ySdCp3F0nihjQz0NvsgeYiw=w1318-h612',
+  ];
   onSwiper() {}
   onSlideChange() {}
 }

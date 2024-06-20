@@ -54,8 +54,6 @@ describe('NavbarComponent', () => {
       value: 150,
     });
     window.dispatchEvent(new Event('resize'));
-
-
     fixture.detectChanges();
     const anchorTagsAfterResize = bannerDe.query(By.css('a'));
 

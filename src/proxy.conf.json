@@ -1,0 +1,12 @@
+{
+  "/parser": {
+    "target": "https://bilelfeki.pythonanywhere.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/posts": ""
+    },
+    "logLevel": "debug"
+  }
+
+}
