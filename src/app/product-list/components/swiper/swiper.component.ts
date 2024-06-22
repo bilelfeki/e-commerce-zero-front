@@ -45,7 +45,7 @@ export class SwiperComponent implements OnInit {
 
   constructor(private swiperImagesService: SwiperImagesService) {}
   ngOnInit(): void {
-    this.swiperImagesService.getSwiperImages()
+    this.swiperImagesService.getSwiperImageUrls()
     .subscribe(data=>{
       this.swiperImageSources=data
     })
