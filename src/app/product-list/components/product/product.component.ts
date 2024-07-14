@@ -17,8 +17,6 @@ export class ProductComponent implements OnInit {
   constructor(private productImagesService:ProductImagesService){}
   ngOnInit(): void {
     this.productImagesService.getProductImagesUrls().subscribe(data=>{
-      console.log(data);
-
       data.forEach((url,index)=>{
         this.productDetails[index].imageSource=url
       })

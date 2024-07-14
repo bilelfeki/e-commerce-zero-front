@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MainComponent } from './main.component';
 
 describe('MainComponent', () => {
@@ -8,16 +9,16 @@ describe('MainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MainComponent]
-    })
-    .compileComponents();
-    
+      declarations: [MainComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(MainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create main product component', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -6,9 +6,18 @@ import { MainComponent } from './components/main/main.component';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { SwiperModule } from 'swiper/angular';
 import { ProductListRoutingModule } from './product-list.routing.module';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { fromEvent, of, switchMap } from 'rxjs';
 
 @NgModule({
-  declarations: [SwiperComponent, ProductComponent, MainComponent],
+  declarations: [
+    SwiperComponent,
+    ProductComponent,
+    ProductDetailsComponent,
+    MainComponent,
+  ],
   imports: [CommonModule, ProductListRoutingModule, SwiperModule],
 })
-export class ProductListModule {}
+export class ProductListModule {
+
+}

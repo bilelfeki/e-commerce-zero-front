@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductComponent } from './product.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -8,7 +10,9 @@ describe('ProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductComponent]
+      declarations: [ProductComponent],
+      providers: [provideHttpClient()],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 
@@ -17,7 +21,7 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create ProductComponent', () => {
     expect(component).toBeTruthy();
   });
 });
