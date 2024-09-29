@@ -1,0 +1,13 @@
+<div class="flex justify-center items-center sm:block">
+  <div class="product-grid">
+    @for (product of productDetails; track $index) {
+    <app-product-card
+      [description]="product.description"
+      [imageUrl]="product.imageSource"
+      [starsNumber]="product.rate"
+      [price]="1"
+    >
+    </app-product-card>
+    }
+  </div>
+</div>

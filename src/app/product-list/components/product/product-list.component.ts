@@ -10,10 +10,10 @@ export interface ProductDetails{
 }
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.css'
 })
-export class ProductComponent implements OnInit {
+export class ProductListComponent implements OnInit {
   constructor(private productImagesService:ProductImagesService){}
   ngOnInit(): void {
     this.productImagesService.getProductImagesUrls().subscribe(data=>{
@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
     description:"",
     price:599,
     rate:3,
-    imageSource:"https://drive.google.com/file/d/16xUPYaoB4Ow_Ue9BdKBQMe93agHm0Nr0"
+    imageSource:"https://www.tunisianet.com.tn/101029-home/pc-portable-schneider-scl141ctp-quad-core-2-go-.jpg"
   },{
     title:"Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
     description:"",

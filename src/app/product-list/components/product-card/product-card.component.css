@@ -1,0 +1,15 @@
+.card-container {
+  @apply p-3 m-3 md:w-80 rounded w-72 bg-white hover:shadow-lg;
+}
+
+.description {
+  @apply overflow-hidden max-h-32 h-auto hover:overflow-y-scroll font-semibold break-words;
+}
+
+.text-button {
+  @apply hover:bg-blue-800 sm:bg-blue-700 sm:rounded-lg sm:p-3 sm:font-medium sm:text-white sm:inline hidden;
+}
+
+.small-button {
+  @apply sm:hidden h-12 w-10 bg-blue-700 rounded-lg p-3 font-medium text-white;
+}
