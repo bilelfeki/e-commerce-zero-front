@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent,  } from './components/footer/footer.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CategoryComponent } from './components/category/category.component';
 
 
 
@@ -10,7 +11,8 @@ import { CategoryListComponent } from './components/category-list/category-list.
   declarations: [
     NavbarComponent,
     FooterComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule

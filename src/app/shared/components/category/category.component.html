@@ -1,0 +1,29 @@
+<div class="nav-header p-3 m-3">
+  <strong class="hover:text-gray-500">
+    <!-- Right arrow -->
+    @if (clicked) {
+    <span>&#9660;</span>
+    } @else {
+    <span>&#9654;</span>
+    }
+    {{ content.headerName }}
+  </strong>
+
+@if (clicked) {
+  @if (content.headerItems.length!==0) {
+    <div class="nav-child p-3">
+      @for (item of content.headerItems; track $index) {
+      <p class="hover:text-gray-400">
+        {{ item }}
+      </p>
+      }
+    </div>
+    }@else {
+      <div class="nav-child p-3">
+        <p class="hover:text-gray-400">
+          Empty Category
+        </p>
+        </div>
+    }
+}
+</div>

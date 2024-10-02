@@ -1,0 +1,6 @@
+.nav-header {
+  @apply z-10 bg-white divide-y divide-gray-100 shadow w-60 dark:bg-gray-700 py-2 text-sm text-gray-700 dark:text-gray-200 cursor-pointer
+}
+.nav-child {
+  @apply mt-3 ml-6 z-10 bg-white divide-y divide-gray-100  w-44 dark:bg-gray-700 py-2  text-gray-700 dark:text-gray-100 cursor-pointer
+}
