@@ -1,5 +1,7 @@
 .swiper-container {
-  margin-top: 20px;
-  width: 100%;
-  height: 30%;
+  @apply w-full md:h-auto max-w-fit rounded-lg mx-auto h-40
+}
+
+.swiper-slide img {
+  @apply w-full h-auto object-contain
 }

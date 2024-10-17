@@ -41,7 +41,12 @@ export class SwiperComponent implements OnInit {
       disableOnInteraction: false,
     },
   };
-  swiperImageSources:string[] = [];
+
+
+  swiperImageSources:string[] = [
+    'https://demo.icm.intershop.de/INTERSHOP/static/WFS/inSPIRED-inTRONICS_Business-Site/-/inSPIRED-inTRONICS_Business-rest/fr_FR/pwa/discount_for_register_teaser_middle_largefont.jpg',
+    'https://github.com/bilelfeki/multi-website-pictures/blob/master/multi-website-picture/pwa_home_teaser_.jpg?raw=true',
+  ];
 
   constructor(private swiperImagesService: SwiperImagesService) {}
   ngOnInit(): void {

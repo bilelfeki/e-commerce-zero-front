@@ -2,6 +2,7 @@
   <div class="product-grid">
     @for (product of productDetails; track $index) {
     <app-product-card
+
       [description]="product.description"
       [imageUrl]="product.imageSource"
       [starsNumber]="product.rate"
